@@ -10,6 +10,11 @@ services:
     depends_on:
       - db
     restart: always
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    networks:
+      - app-network
 
   db:
     image: postgres:15
@@ -21,6 +26,12 @@ services:
       - POSTGRES_DB=${DB_NAME:-makkaizou_line}
     ports:
       - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   postgres_data: 
