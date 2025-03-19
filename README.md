@@ -1,6 +1,118 @@
-# Makkaizou-LINE Integration
+# LINE-AI Assistant
 
-This project integrates a custom "Makkaizou" system (a ChatGPT-based chatbot solution) with a LINE Official Account. The system receives messages from a LINE group, processes them via the Makkaizou API, and responds with the output of the Makkaizou system.
+Integration between LINE Messaging API and Makkaizou AI using FastAPI
+
+## Implementation Progress
+
+### ✅ Phase 1: Foundation (Completed)
+- **Project Structure**
+  - FastAPI application setup with modular architecture
+  - PostgreSQL database integration
+  - Docker containerization with networking
+  - Comprehensive logging system
+
+- **Core Components**
+  - LINE webhook endpoint implementation
+  - Database models and migrations
+  - Basic message handling
+  - Environment configuration
+  - GitHub repository setup
+
+### ✅ Phase 2: Core Implementation (Completed)
+- **Message Processing**
+  - LINE webhook validation
+  - Message event handling
+  - Mention detection in group chats
+  - Error logging and monitoring
+
+- **Integration Features**
+  - Makkaizou API connection
+  - Response handling and formatting
+  - Database persistence
+  - Docker networking configuration
+
+### 🚧 Phase 3: Enhancement (In Progress)
+- Loading indicator implementation
+- Advanced error handling
+- Comprehensive monitoring
+- Performance optimizations
+- Rich message formatting
+- Caching mechanisms
+
+### 📅 Phase 4: Testing & Deployment (Planned)
+- End-to-end testing
+- Load testing
+- Security audits
+- Production deployment
+- Documentation updates
+
+## Recent Technical Improvements
+- Added explicit DNS configuration
+- Implemented bridge network for containers
+- Enhanced container communication
+- Fixed network connectivity issues
+
+## Setup Instructions
+
+### Prerequisites
+- Docker and Docker Compose
+- Python 3.8+
+- PostgreSQL (if running without Docker)
+- LINE Developer Account
+- Makkaizou API Access
+
+### Environment Setup
+1. Clone the repository
+```bash
+git clone https://github.com/varunbhtt21/LINE-AI-Assistant-FastAPI.git
+cd LINE-AI-Assistant-FastAPI
+```
+
+2. Copy environment example and configure
+```bash
+cp .env.example .env
+# Edit .env with your configurations
+```
+
+3. Start with Docker
+```bash
+docker-compose up -d
+```
+
+4. Check logs
+```bash
+docker-compose logs -f app
+```
+
+### LINE Configuration
+1. Set up LINE Developer Account
+2. Create LINE Official Account
+3. Configure Webhook URL
+4. Enable webhook setting
+
+### Testing
+1. Add the LINE bot to a group
+2. Mention the bot in a message
+3. Check application logs for response
+
+## Architecture
+
+The application follows a modular architecture:
+- `/app`: Main application code
+  - `/api`: API endpoints
+  - `/database`: Database models and connection
+  - `/services`: Business logic
+  - `/utils`: Utility functions
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Features
 
@@ -124,10 +236,6 @@ makkaizou-line-integration/
 ├── requirements.txt
 └── README.md
 ```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 
